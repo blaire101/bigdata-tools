@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Vendor: com.x
+Implementation-Title: WordCount
+Implementation-Version: 1.0
+Implementation-Vendor-Id: com.x
+Specification-Vendor: com.x
+Specification-Title: WordCount
+Specification-Version: 1.0
+
