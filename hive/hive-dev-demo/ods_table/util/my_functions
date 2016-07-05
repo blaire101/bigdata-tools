@@ -1,0 +1,93 @@
+#!/bin/bash
+# desc : my commonly used functions
+# auor : libin
+
+# ${jdbc_table} ${hive_table}
+#function: import jdbc_data to hive_table
+function import_data_hive() {
+  if [ $# -ne 5 ] ; then
+    echo_ex "args count $# is error!"
+    exit 255
+  fi
+  jdbc_table=$1
+  hive_table=$2
+
+  jdbc_url=$3
+  jdbc_username=$4
+  jdbc_passwd=$5
+  echo "start import hive. from ${jdbc_table}..."
+  if [ -n "${jdbc_table}" ] ; then
+    echo_ex "${HADOOP} fs -rmr /user/hdfs/${jdbc_table}"
+    ${HADOOP} fs -rmr /user/hdfs/${jdbc_table}
+  fi
+  sqoop import \
+    --connect ${jdbc_url} \
+    --username ${jdbc_username} --password  ${jdbc_passwd} \
+    --table ${jdbc_table} --fields-terminated-by "\001" --lines-terminated-by "\n" \
+    --hive-import --hive-overwrite --hive-table ${hive_table} \
+    --null-string '\\N' --null-non-string '\\N'
+  check_success
+  echo "end successful import to ${hive_table}"
+}
+#agrs 3  : jdbc_table, exec_sql, target_dir
+#function: import_data_to_hdfs
+function import_data_hdfs() {
+  if [ $# -lt 5 ] ; then
+    echo_ex "args count $# is error!"
+    return 255
+  fi
+  exec_sql=$1
+  target_dir=$2
+
+  jdbc_url=$3
+  jdbc_username=$4
+  jdbc_passwd=$5
+  id="id"
+  if [ $# -gt 5 ] ; then
+    id=$6
+  fi
+  echo_ex "$exec_sql"
+  echo_ex "start import from jdbc_table..."
+  if [ -n "${target_dir}" ] && [ ${target_dir} != "/" ]; then
+    echo_ex "${HADOOP} fs -rmr ${target_dir}"
+    ${HADOOP} fs -rmr "${target_dir}"
+  fi
+  echo_ex "-split-by ${id} -m 10"
+  echo_ex "${target_dir}"
+  sqoop import \
+    --connect ${jdbc_url} --username ${jdbc_username} --password  ${jdbc_passwd} \
+    --query "${exec_sql}" \
+    --split-by ${id} -m 10 \
+    --target-dir ${target_dir} \
+    --fields-terminated-by "\001" --lines-terminated-by "\n" \
+    --hive-drop-import-delims \
+    --null-string '\\N' --null-non-string '\\N'
+  check_success
+  echo_ex "end successful import ${target_dir}. field.delim : \001"
+  #### Temporary repair (x_card_user) bug. surplus part
+#  if [ -n "${target_dir}/part-m-00011" ] && [ ${target_dir} != "/" ]; then
+#    echo_ex "${HADOOP} fs -rmr ${target_dir}/part-m-00011"
+#    ${HADOOP} fs -rmr "${target_dir}/part-m-00011"
+#  fi
+#  echo_ex "end successful rmr other duoyu part.  import ${target_dir}. field.delim : \001"
+}
+
+#agrs 3  : hive-table-uri/jdbc_table
+#function: import_data_to_mysql
+function import_data_to_mysql() {
+  if [ $# -lt 5 ] ; then
+    echo_ex "args count $# is error!"
+    return 255
+  fi
+  hive_table_uri=$1
+  jdbc_table=$2
+
+  jdbc_url=$3
+  jdbc_username=$4
+  jdbc_passwd=$5
+  echo_ex "$hive_table_uri $jdbc_table"
+  sqoop-export --connect "${jdbc_url}" --username "${jdbc_username}" --password "${jdbc_passwd}" --table "${jdbc_table}" --export-dir ${hive_table_uri} --input-fields-terminated-by '\001'
+
+  check_success
+  echo_ex "end successful import ${jdbc_table}. field.delim : \001"
+}
