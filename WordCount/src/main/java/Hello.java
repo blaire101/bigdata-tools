@@ -1,5 +1,4 @@
 /**
- * Author : clb@x.com
  * Date : 2016-03-25
  */
 public class Hello {
