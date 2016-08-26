@@ -1,6 +1,8 @@
+package com.x.mytest
+
 /* WordCount.scala */
 
-import org.apache.spark.{SparkContext, SparkConf}
+import org.apache.spark.{SparkConf, SparkContext}
 
 /**
  * Author : clb@x.com

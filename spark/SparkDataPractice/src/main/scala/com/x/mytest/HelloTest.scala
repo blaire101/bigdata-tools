@@ -1,3 +1,5 @@
+package com.x.mytest
+
 /* HelloWorld.scala */
 
 object HelloTest {

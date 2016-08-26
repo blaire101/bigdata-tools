@@ -1,7 +1,7 @@
+package com.x.mytest
+
 /* HelloWorld.scala */
-import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
-import org.apache.spark.SparkConf
+import org.apache.spark.{SparkConf, SparkContext}
 
 object HelloWorld {
     def main(args: Array[String]): Unit = {
