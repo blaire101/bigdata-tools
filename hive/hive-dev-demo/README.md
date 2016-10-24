@@ -1,10 +1,10 @@
-# 大数据离线分析模块开发规范
+# dev norm of big data off-line analysis modules 
 
+> Flexible task scheduling framework
 
 | 日期 | 版本 | 说明 | 修改人员| 确认人员 |
 | :--- | :-- |:--- | :-- |:--- | 
-| 2015-12-09 | 1.0 | 初版 | 布莱尔 | Blair Chan |
-| 2015-12-09 | 2.0 | 第二版 | 布莱尔 | Blair Chan |
+| 2015-12-09 | 1.0 | first version | 布莱尔 | Blair Chan |
 
 ### 目标
 ===

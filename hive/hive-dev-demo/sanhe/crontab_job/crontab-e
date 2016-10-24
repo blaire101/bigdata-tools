@@ -1,0 +1,8 @@
+#############################################################
+##             sanhe   ETL   example     ##
+#############################################################
+*/5 01-22 * * * source /etc/profile; sh /data0/hero/online/sanhe/crontab_job/crontab_job_com_check_order_detail_ktr.sh
+*/5 01-22 * * * source /etc/profile; sh /data0/hero/online/sanhe/crontab_job/crontab_job_com_check_order_ktr.sh
+*/5 01-22 * * * source /etc/profile; sh /data0/hero/online/sanhe/crontab_job/crontab_job_com_shop_vip_ktr.sh
+
+*/5 01-23 * * * source /etc/profile; sh /data0/hero/online/sanhe/crontab_job/crontab_job_dw_pd_itemquantity_m_kjb.sh
