@@ -4,8 +4,7 @@
 
 | 日期 | 版本 | 说明 | 修改人员| 确认人员 |
 | :--- | :-- |:--- | :-- |:--- | 
-| 2015-12-09 | 1.0 | first version | Clb | Clb |
-| 2016-10-31 | 2.0 | ~ | Clb| Zqj |
+| 2015-12-09 | 1.0 | first version | Blair Chan | Blair Chan |
 
 ## 目标
 
@@ -69,7 +68,7 @@
 + kettle 脚本调用任务可参考 :
     
     ```
-    http://gitlab.***/backend/sanhe.git
+    http://github.***/backend/sanhe.git
     ``` 
     
 + 1). 变量命名􏰂
