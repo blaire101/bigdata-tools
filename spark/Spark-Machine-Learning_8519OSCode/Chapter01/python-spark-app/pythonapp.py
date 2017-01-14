@@ -14,6 +14,8 @@ totalRevenue = data.map(lambda record: float(record[2])).sum()
 products = data.map(lambda record: (record[1], 1.0)).reduceByKey(lambda a, b: a + b).collect()
 mostPopular = sorted(products, key=lambda x: x[1], reverse=True)[0]
 
+print mostPopular
+
 # Finally, print everything out
 print "Total purchases: %d" % numPurchases
 print "Unique users: %d" % uniqueUsers
