@@ -1,11 +1,3 @@
-<style>
-img {
-        display: block !important;
-        width: 500px;
-        margin-left: 180px !important;
-}
-</style>
-
 ![][1.1]
 
 No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | OLTP | OLAP
