@@ -89,12 +89,12 @@ exit 0
 1. [pull data detail flow][11]
 2. [scheduling-framework][12]
 
-[0]: /doc/greenplum-ods-flow.png
+[0]: /greenplum/ext_ods_table/doc/greenplum-ods-flow.png
 [1]: https://zh.wikipedia.org/zh-hans/Unix_shell
 [2]: https://github.com/alibaba/DataX/
 [3]: https://en.wikipedia.org/wiki/PostgreSQL
 [4]: http://dbaplus.cn/news-21-341-1.html
 [5]: http://www.greenplumdba.com/gpfdist
 [6]: http://www.pentaho.com/
-[11]: http://gitlab.ops.xkeshi.so/backend/ext_ods_table/blob/master/doc/README.md
-[12]: http://gitlab.ops.xkeshi.so/backend/ext_ods_table/blob/master/doc/scheduling-framework.md
+[11]: /greenplum/ext_ods_table/doc/README.md
+[12]: /greenplum/ext_ods_table/doc/scheduling-framework.md
