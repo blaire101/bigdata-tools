@@ -30,8 +30,8 @@ gpfdist -d /data0/dm/datax_home/myextdata -p 8900 > /tmp/gpfdist.log 2>&1 &
 /data0/dm/datax_home/myextdata/gpextdata
 [hdfs@node190 gpextdata]$ ll
 total 4
-drwxrwxr-x 2 hdfs hdfs 4096 Jan 19 17:51 xkeshi_com.ext
-drwxrwxr-x 2 hdfs hdfs   59 Jan 11 14:57 xkeshi_member.ext
+drwxrwxr-x 2 hdfs hdfs 4096 Jan 19 17:51 your_company_name_com.ext
+drwxrwxr-x 2 hdfs hdfs   59 Jan 11 14:57 your_company_name_member.ext
 ```
 
 ## 3. conf/default.conf
@@ -96,7 +96,7 @@ CREATE EXTERNAL TABLE ext.ext_dm_shop (
     distribution varchar,
     signboards_id bigint
 ) LOCATION (
-    'gpfdist://192.168.xx.xx:8900/gpextdata/xkeshi_com.ext/shop.txt*'
+    'gpfdist://192.168.xx.xx:8900/gpextdata/your_company_name_com.ext/shop.txt*'
 ) format 'text' (DELIMITER '\t' NULL AS 'null' escape 'OFF')
 Encoding 'UTF-8' Log errors into ext.ext_dm_shop_err segment reject limit 10 rows;
 
@@ -123,7 +123,7 @@ SELECT * FROM ext.ext_dm_shop limit 20;
                                 "jdbc:mysql://192.168.xx.xx:port"
                                 ],
                             "table": [
-                                "xkeshi_com.shop"
+                                "your_company_name_com.shop"
                                 ]
                         }
                         ],
@@ -173,7 +173,7 @@ SELECT * FROM ext.ext_dm_shop limit 20;
                 "writer": {
                     "name": "txtfilewriter",
                     "parameter": {
-                        "path": "/$gpextdata/xkeshi_com.ext",
+                        "path": "/$gpextdata/your_company_name_com.ext",
                         "fileName": "shop.txt",
                         "writeMode": "truncate",
                         "dateFormat": "yyyy-MM-dd",
@@ -194,19 +194,19 @@ SELECT * FROM ext.ext_dm_shop limit 20;
 ### 5.2 json file path
 
 ```bash
-[hdfs@node190 xkeshi_com.ext]$ pwd
-/data0/dm/online/ext_ods_table/data/xkeshi_com.ext
-[hdfs@node190 xkeshi_com.ext]$ ll
+[hdfs@node190 your_company_name_com.ext]$ pwd
+/data0/dm/online/ext_ods_table/data/your_company_name_com.ext
+[hdfs@node190 your_company_name_com.ext]$ ll
 total 16
 -rwxr-xr-x 1 hdfs hdfs 2849 Jan 19 16:51 mysql2textfile-orders.json
 -rwxr-xr-x 1 hdfs hdfs 3010 Jan 19 10:26 mysql2textfile-shop.json
-[hdfs@node190 xkeshi_com.ext]$
+[hdfs@node190 your_company_name_com.ext]$
 ```
 
 ### 5.3 run import data by datax.py
 
 ```
-python ${datax_home}/bin/datax.py -p "-Dbegin_time='2010-01-01' -Dend_time='${d1}' -Dgpextdata='${gpextdata}'" ${data_dir}/xkeshi_com.ext/mysql2textfile-shop.json
+python ${datax_home}/bin/datax.py -p "-Dbegin_time='2010-01-01' -Dend_time='${d1}' -Dgpextdata='${gpextdata}'" ${data_dir}/your_company_name_com.ext/mysql2textfile-shop.json
 ```
 
 ## 6. create ods table
@@ -257,7 +257,7 @@ CREATE TABLE "ods"."ods_dm_shop" (
     signboards_id bigint
 )
 WITH (OIDS=FALSE);
-ALTER TABLE "ods"."ods_dm_shop" OWNER TO "xkeshi_gp";
+ALTER TABLE "ods"."ods_dm_shop" OWNER TO "your_company_name_gp";
 
 SELECT count(*) FROM ods.ods_dm_shop limit 20;
 ```
@@ -311,9 +311,9 @@ ${data_integration}/kitchen.sh -file=${ktrs_dir}/ods_shop.kjb
 cd `dirname $0`/.. && wk_dir=`pwd` && cd -
 source ${wk_dir}/util/env
 echo_ex $pql
-echo_ex "${datax_home}/bin/datax.py -p \"-Dbegin_time='2010-01-01' -Dend_time='${d1}' -Dgpextdata='${gpextdata}'\" ${data_dir}/xkeshi_com.ext/mysql2textfile-shop.json"
+echo_ex "${datax_home}/bin/datax.py -p \"-Dbegin_time='2010-01-01' -Dend_time='${d1}' -Dgpextdata='${gpextdata}'\" ${data_dir}/your_company_name_com.ext/mysql2textfile-shop.json"
 
-python ${datax_home}/bin/datax.py -p "-Dbegin_time='2010-01-01' -Dend_time='${d1}' -Dgpextdata='${gpextdata}'" ${data_dir}/xkeshi_com.ext/mysql2textfile-shop.json
+python ${datax_home}/bin/datax.py -p "-Dbegin_time='2010-01-01' -Dend_time='${d1}' -Dgpextdata='${gpextdata}'" ${data_dir}/your_company_name_com.ext/mysql2textfile-shop.json
 check_success
 
 echo_ex "${data_integration}/kitchen.sh -file=${ktrs_dir}/ods_shop.kjb"
