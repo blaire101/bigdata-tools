@@ -13,12 +13,12 @@
     </parameters>
   <connection>
     <name>pg90</name>
-    <server>192.168.181.190</server>
+    <server>192.168.xx.xx</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
-    <database>xkeshi_com</database>
+    <database>your_company_name_com</database>
     <port>2345</port>
-    <username>xkeshi_gp</username>
+    <username>your_company_name_gp</username>
     <password>Encrypted 2be98afc812cc9797a3109177cec3f68a</password>
     <servername/>
     <data_tablespace/>
