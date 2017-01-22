@@ -1,6 +1,17 @@
 #!/bin/bash
 # desc : my commonly used functions
 
+function import_gpdata_from_rds1() {
+  if [ $# -ne 3 ] ; then
+    echo_ex "args count $# is error!"
+    exit 255
+  fi
+  begin_time=$1
+  end_time=$2
+  json_file=$3
+  python ${datax_home}/bin/datax.py -p "-Dbegin_time='$begin_time' -Dend_time='${end_time}' -Dgpextdata='${gpextdata}' -Dusername='${rds1_username}' -Dpassword='${rds1_password}' -DjdbcUrl='${rds1_jdbcUrl}'" $json_file
+}
+
 # ${jdbc_table} ${hive_table}
 #function: import jdbc_data to hive_table
 function import_data_hive() {
