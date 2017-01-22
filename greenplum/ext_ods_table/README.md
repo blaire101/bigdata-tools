@@ -58,22 +58,29 @@ sh ods_dm_shop.sh ${d1}
 (3). ods\_dm\_shop.sh
 
 ```bash
-#!/bin/bash
 ###############################################################################
-#                                                                             
-# @date:   2017.01.19
+#
+# @date:   2017.01.20
 # @desc:   mysql data -> ext shop -> ods shop
-#                                                                            
-############################################################################### 
+#
+###############################################################################
 
 cd `dirname $0`/.. && wk_dir=`pwd` && cd -
 source ${wk_dir}/util/env
+source ${util_dir}/my_functions
 
-python ${datax_home}/bin/datax.py -p "-Dbegin_time='2010-01-01' -Dend_time='${d1}' -Dgpextdata='${gpextdata}'" ${data_dir}/your_company_name_com.ext/mysql2textfile-shop.json
+begin_time="2010-01-01"
+end_time=${d1}
+
+import_gpdata_from_rds1 ${begin_time} ${end_time} ${data_dir}/xkeshi_com.ext/mysql2textfile-shop.json
 check_success
+
+echo_ex "${data_integration}/kitchen.sh -file=${ktrs_dir}/ods_shop.kjb"
 
 ${data_integration}/kitchen.sh -file=${ktrs_dir}/ods_shop.kjb
 check_success
+
+echo_ex "import shop end"
 
 exit 0
 ```
