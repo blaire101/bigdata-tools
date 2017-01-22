@@ -115,12 +115,12 @@ SELECT * FROM ext.ext_dm_shop limit 20;
             "reader": {
                 "name": "mysqlreader",
                     "parameter": {
-                        "username": "guo",
-                        "password": "your_passwd",
+                        "username": "$username",
+                        "password": "$password",
                         "connection": [
                         {
                             "jdbcUrl": [
-                                "jdbc:mysql://192.168.xx.xx:port"
+                                "$jdbcUrl"
                                 ],
                             "table": [
                                 "your_company_name_com.shop"
