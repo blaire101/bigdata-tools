@@ -66,9 +66,9 @@ Hadoop架构，需要在原生的Mapreduce开发框架基础上的开发，需�
 - [JD阅读 : Greenplum企业级应用实战][4]
 - [聊聊Greenplum的那些事][5]
 
-[1.1]: /tools/images/greenplum/greenplum-1.1.png
-[1.2]: /tools/images/greenplum/greenplum-1.2.png
-[1.3]: /tools/images/greenplum/greenplum-1.4.png
+[1.1]: /_source/greenplum/greenplum-1.1.png
+[1.2]: /_source/greenplum/greenplum-1.2.png
+[1.3]: /_source/greenplum/greenplum-1.4.png
 [4]: https://cread.jd.com/read/startRead.action?bookId=30189846&readType=1
 [5]: http://dbaplus.cn/news-21-341-1.html
 [6]: https://en.wikipedia.org/wiki/Hash_join
