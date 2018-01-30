@@ -1,21 +1,11 @@
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-      displayMath: [ ['$$','$$']],
-      processEscapes: true
-    }
-  });
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
-</script>
-
 ## Machine Learning
 
-- Grew out of work in Artificial Intelligence- New capability for computers> search engine, recommendation system, image recognition
-> web click data, medical records , biology, engineering
+- Grew out of work in Artificial Intelligence
+- New capability for computers
+
+> search engine, recommendation system, image recognition
+
+> web click data, medical records , biology, engineering
 > 
 > Natural Language Processing (NLP), Computer Vision
 
