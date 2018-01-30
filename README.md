@@ -50,6 +50,6 @@ Field of study that gives computers the ability to learn without being explicitl
 4. 『要做模型融合(model ensemble)啊啊啊！』
 
 [1]: /source/images/ml-ng/ml-ng-w1-01-1.png
-[2]: /sourcs/images/ml-ng/ml-ng-w1-01-2.png
-[3]: /sourcs/images/ml-ng/ml-ng-w1-01-3.png
-[4]: /sourcs/images/ml-ng/ml-ng-w1-01-4.png
+[2]: /source/images/ml-ng/ml-ng-w1-01-2.png
+[3]: /source/images/ml-ng/ml-ng-w1-01-3.png
+[4]: /source/images/ml-ng/ml-ng-w1-01-4.png
