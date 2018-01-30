@@ -49,7 +49,7 @@ Field of study that gives computers the ability to learn without being explicitl
 3. 『特征工程(feature engineering)太重要了！在很多Kaggle的场景下，甚至比model本身还要重要』
 4. 『要做模型融合(model ensemble)啊啊啊！』
 
-[1]: /tools/images/ml-ng/ml-ng-w1-01-1.png
-[2]: /tools/images/ml-ng/ml-ng-w1-01-2.png
-[3]: /tools/images/ml-ng/ml-ng-w1-01-3.png
-[4]: /tools/images/ml-ng/ml-ng-w1-01-4.png
+[1]: /source/images/ml-ng/ml-ng-w1-01-1.png
+[2]: /source/images/ml-ng/ml-ng-w1-01-2.png
+[3]: /source/images/ml-ng/ml-ng-w1-01-3.png
+[4]: /source/images/ml-ng/ml-ng-w1-01-4.png
