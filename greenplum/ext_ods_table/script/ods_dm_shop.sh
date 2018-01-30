@@ -12,7 +12,7 @@ source ${util_dir}/my_functions
 begin_time="2010-01-01"
 end_time=${d1}
 
-import_gpdata_from_rds1 ${begin_time} ${end_time} ${data_dir}/xkeshi_com.ext/mysql2textfile-shop.json
+import_gpdata_from_rds1 ${begin_time} ${end_time} ${data_dir}/x_com.ext/mysql2textfile-shop.json
 check_success
 
 echo_ex "${data_integration}/kitchen.sh -file=${ktrs_dir}/ods_shop.kjb"
