@@ -22,6 +22,6 @@ HiveServer2
 
 ![java connect hiveserver2][1]
 
-[1]: https://github.com/blair101/bigdata/tree/master/hive/HiveJdbc/raw/master/images/HiveJdbcTest.png
+[1]: https://raw.githubusercontent.com/blair101/bigdata/master/hive/HiveJdbc/images/HiveJdbcTest.png
 
 注 : CDH CM 可直接启动 metastore、hiveserver2 service等，beeline 与 java connect hiveserver2 验证其一通过，就可以确定 hiveserver2 已经成功开启并可 remote join call。
