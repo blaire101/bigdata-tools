@@ -46,10 +46,10 @@ Evaluator 需要实现 init、iterate、terminatePartial、merge、terminate 这
 ## Summary
 
 1. 重载 evaluate 函数
-2. UDF 函数中参数类型可以为Writable，也可为java中的基本数据对象。
-3. UDF 支持变长的参数。
-4. Hive 支持隐式类型转换。
-5. 客户端退出时，创建的临时函数自动销毁。
-6. evaluate函数必须要返回类型值，空的话返回null，不能为void类型。
-7. UDF 和 UDAF 都可以重载。
+2. UDF 函数中参数类型可以为Writable，也可为java中的基本数据对象
+3. UDF 支持变长的参数
+4. Hive 支持隐式类型转换
+5. 客户端退出时，创建的临时函数自动销毁
+6. evaluate函数必须要返回类型值，空的话返回null，不能为void类型
+7. UDF 和 UDAF 都可以重载
 8. 查看函数 SHOW FUNCTIONS;
