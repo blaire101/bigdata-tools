@@ -1,6 +1,4 @@
-user_bhv 里面的代码为 UDAF 的 demo 例子.
-
-# Hive 中 udf、udaf 的使用
+**user_bhv** 里面的代码为 UDAF 的 demo 例子.
 
 Hive 是基于 Hadoop 中的 MapReduce，提供 HQL 查询的数据仓库. 
 
