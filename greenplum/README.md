@@ -1,6 +1,6 @@
 ![][1.1]
 
-OLTP | OLAP
+OLTP (on-line transaction processing) | OLAP
 ------- | -------
 数据在系统中产生 | 本身不产生数据，基础数据来源于产生系统
 基于交易的处理系统 | 基于查询的分析系统
