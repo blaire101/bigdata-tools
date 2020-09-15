@@ -16,7 +16,7 @@
     <!--junit-->
     <junit.version>4.12</junit.version>
     <mysql-connector-java.version>5.1.38</mysql-connector-java.version>
-    <hive-jdbc.version>1.1.1</hive-jdbc.version>
+    <hive-jdbc.version>2.3.4</hive-jdbc.version>
     <hadoop-common.version>2.7.2</hadoop-common.version>
 
   </properties>
