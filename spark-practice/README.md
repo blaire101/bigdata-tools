@@ -15,8 +15,8 @@ Spark 兼顾数据仓库、流处理、图计算 等多种计算范式，大数�
 ## 1. Spark 的历史与发展
 
  - 2009 年 : Spark 诞生于 AMPLab  
- - 2014-02 : Apache 顶级项目  
- - 2014-05 : Spark 1.0.0 发布
+ - 2014 年 : Spark 1.0.0 发布
+ - 2019 年 : Spark 3.0.0 发布
 
 ## 2. Spark 之于 Hadoop
  
@@ -33,20 +33,15 @@ Spark 兼顾数据仓库、流处理、图计算 等多种计算范式，大数�
 
 ## 3. Spark 能带来什么 ?
  
- 1. 打造全栈多计算范式的高效数据流水线
- 2. 轻量级快速处理, 并支持 Scala、Python、Java
- 3. 与 HDFS 等 存储层 兼容
+spark-3.0.0-bin-hadoop3.2
 
-## 4. Spark 安装与部署
+## 4. pyspark test
 
-Spark 主要使用 HDFS 充当持久化层，所以完整的安装 Spark 需要先安装 Hadoop. 
-Spark 是计算框架, 它主要使用 HDFS 充当持久化层。
-
-**Linux 集群安装 Spark**
-
-1. 安装 JDK
-2. 安装 Scala
-3. 配置 SSH 免密码登陆 (可选)
-4. 安装 Hadoop
-5. 安装 Spark
-6. 启动 Spark 集群
+```bash
+logFile="file:////Users/blair/ghome/github/spark3.0/pyspark/README.md"
+logData=sc.textFile(logFile).cache()
+numAs=logData.filter(lambda s:'a' in s).count()
+numbs=logData.filter(lambda s:'b' in s).count()
+numAs
+numBs
+```
