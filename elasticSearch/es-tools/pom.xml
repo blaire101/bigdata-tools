@@ -71,7 +71,7 @@
         <junit.version>4.12</junit.version>
 
         <!--elasticsearch java api-->
-        <es.version>1.7.5</es.version>
+        <es.version>6.8.13</es.version>
         <httpclient.version>4.5.2</httpclient.version>
 
     </properties>
