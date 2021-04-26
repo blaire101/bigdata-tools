@@ -48,7 +48,7 @@
         <jackson.version>1.9.13</jackson.version>
 
         <!--commons-->
-        <commons-io.version>2.4</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <commons-lang3.version>3.1</commons-lang3.version>
         <guava.version>19.0</guava.version>
 
