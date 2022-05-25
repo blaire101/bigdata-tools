@@ -38,7 +38,7 @@
         <!--config center end for x company-->
 
         <!--springframework-->
-        <spring.version>4.2.2.RELEASE</spring.version>
+        <spring.version>5.2.22.RELEASE</spring.version>
 
         <!--CGLIB JSTL-->
         <cglib.version>3.1</cglib.version>
