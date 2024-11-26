@@ -68,7 +68,7 @@
         <quartz.version>2.2.3</quartz.version>
 
         <!--junit-->
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
 
         <!--elasticsearch java api-->
         <es.version>1.7.5</es.version>
